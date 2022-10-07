@@ -28,3 +28,7 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+
+export async function getPosts() {
+    return await client.from('posts').select('*');
+}
