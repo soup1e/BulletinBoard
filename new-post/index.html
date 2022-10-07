@@ -12,7 +12,7 @@
 
         <!-- js -->
         <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-        <script type="module" src="app.js"></script>
+        <script type="module" src="create.js"></script>
 
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,29 +42,43 @@
 
         <main>
             <form id="compose">
-                <h1>categories</h1>
+                <h3>Compose a Post</h3>
+                <label>
+                <div>Categories</div>
                 <select id="catogory-select" required>
                     <option disabled selected value>select...</option>
-                    <option value="1">community</option>
-                    <option value="2">housing</option>
-                    <option value="3">jobs</option>
-                    <option value="4">for sale</option>
-                    <option value="4">services</option>
+                    <option value="1">Community 🙏</option>
+                    <option value="2">Housing 🏠</option>
+                    <option value="3">Jobs 👨‍🏭</option>
+                    <option value="4">For sale 💰</option>
+                    <option value="4">Services 🛎️</option>
                 </select>
-                <h1>title</h1>
-                <input name="title" id="title-input" required placeholder="title" />
-                <h1>description</h1>
-                <input
-                    name="description"
-                    id="description-input"
-                    required
-                    placeholder="description"
-                />
-                <h1>contact</h1>
-                <input name="contact" id="contact-input" placeholder="contact" />
-                <div></div>
-                <button id="add">add post</button>
-                <p id="error"></p>
+            </label>
+                <label>
+                    <div>Title</div>
+                    <input name="title" required placeholder="Post Title..." maxlength="40"/>
+                </label>
+
+                <label>
+                    <div>Text</div>
+                    <textarea name="text" required placeholder="Text..." maxlength="400"></textarea>
+                </label>
+
+                <label>
+                    <div>Image</div>
+                    <input
+                        id="image-input"
+                        name="image"
+                        type="file"
+                    />
+                    <img id='preview' alt="preview" src="../assets/alchemy-favicon.png">
+                </label>
+                <a href="/" formnovalidate>
+                    <input class='cancel' type="button" value="Cancel"></input>
+                </a>
+                <button>Post</button>
+
+                <p id="error-display"></p>
             </form>
         </main>
     </body>

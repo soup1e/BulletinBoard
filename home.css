@@ -26,6 +26,10 @@ li {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 1.8rem;
 }
+
+.thread div {
+    float: right;
+}
 .thread p {
     font-family: 'Noto Sans', sans-serif;
     font-size: 1.2rem;
