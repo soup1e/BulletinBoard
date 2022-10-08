@@ -12,7 +12,7 @@
 
         <!-- js -->
         <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-        <script type="module" src="app.js"></script>
+        <script type="module" src="create.js"></script>
 
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,7 +25,7 @@
         <!-- css -->
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/global.css" />
-        <link rel="stylesheet" href="home.css" />
+        <link rel="stylesheet" href="/new-post/newpost.css" />
 
         <!-- add link for page specific css -->
     </head>
@@ -35,40 +35,41 @@
             <img class="logo" src="/assets/html_css_js.png" alt="logo" />
             <p class="title">Supabase Web App</p>
             <nav>
-                <a href="new-post\index.html">Add post</a>
+                <a href="/">Home</a>
                 <a id="sign-out-link" href="auth">Sign Out</a>
             </nav>
         </header>
 
         <main>
-            <ul id="post-list">
-                <li class="thread">
-                    <a href="/">
-                        <h3>Trees</h3>
-                        <img src="assets\tree.png" alt="Image" />
-                        <p>
-                            In botany, a tree is a perennial plant with an elongated stem, or trunk,
-                            usually supporting branches and leaves. In some usages, the definition
-                            of a tree may be narrower, including only woody plants with secondary
-                            growth, plants that are usable as lumber or plants above a specified
-                            height
-                        </p>
-                    </a>
-                </li>
-                <li class="thread">
-                    <a href="/">
-                        <h3>no image</h3>
-                        <p>cant find it. gone.</p>
-                    </a>
-                </li>
-                <li class="thread">
-                    <a href="/">
-                        <h3>leGoat</h3>
-                        <img src="assets\brongoat.jpg" alt="Image" />
-                        <p>wow!</p>
-                    </a>
-                </li>
-            </ul>
+            <form id="compose">
+                <h3>Compose a Post</h3>
+                
+                <label>
+                    <div>Title</div>
+                    <input name="title" required placeholder="Post Title..." maxlength="40"/>
+                </label>
+
+                <label>
+                    <div>Text</div>
+                    <textarea name="text" required placeholder="Text..." maxlength="400"></textarea>
+                </label>
+
+                <label>
+                    <div>Image</div>
+                    <input
+                        id="image-input"
+                        name="image"
+                        type="file"
+                    />
+                    <img id='preview' alt="preview" src="../assets/alchemy-favicon.png">
+                </label>
+                <a href="/" formnovalidate>
+                    <input class='cancel' type="button" value="Cancel"></input>
+                </a>
+                <button>Post</button>
+
+                <p id="error-display"></p>
+            </form>
         </main>
     </body>
 </html>
