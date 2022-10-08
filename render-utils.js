@@ -13,8 +13,12 @@ export function renderPost(post) {
     const img = document.createElement('img');
     img.src = post.image_url;
 
-    a.append(h3, p);
-
+    // doesnt create a blank img for imageless posts
+    if (post.image_url) {
+        a.append(h3, p, img);
+    } else {
+        a.append(h3, p);
+    }
     li.append(a);
 
     return li;
